@@ -35,14 +35,6 @@ import UIFeedback
 
 ```
 
-Default height of feedback view = ```75```
-
-Apply Shadow to view = ```false```
-
-Default Font = ```HelveticaNeue-Light```
-
-Default Font Size = ```15```
-
 
 ```
 UIFeedback.showFeedback(message: "A Hard Rains Gonna Fall", textColor: UIColor.white, backgroundColor: UIColor.red
