@@ -34,25 +34,29 @@ pod "UIFeedback"
 import UIFeedback 
 
 ```
+
 Default height of feedback view = ```75```
+
 Apply Shadow to view = ```false```
+
 Default Font = ```HelveticaNeue-Light```
+
 Default Font Size = ```15```
 
 
 ```
-UIFeedback.showFeedback(message: "THE WORLD IS YOURS", textColor: UIColor.white, backgroundColor: UIColor.red
+UIFeedback.showFeedback(message: "A Hard Rains Gonna Fall", textColor: UIColor.white, backgroundColor: UIColor.red
 ```
 
 ```
-UIFeedback.showFeedback(message: "ACROSS THE UNIVERSE", textColor: UIColor.white, backgroundColor: UIColor.red, applyShadow: true)
+UIFeedback.showFeedback(message: "Mr. Tambourine Man", textColor: UIColor.white, backgroundColor: UIColor.red, applyShadow: true)
 ```
 ```
-UIFeedback.showFeedback(message: "THE TIMES THEY ARE A CHANGIN'", textColor: UIColor.white, backgroundColor: UIColor.red, heightOfView: 64, applyShadow: true)
+UIFeedback.showFeedback(message: "The Times They are a-Changin'", textColor: UIColor.white, backgroundColor: UIColor.red, heightOfView: 64, applyShadow: true)
 ```
 
 ```
-UIFeedback.showFeedback(message: "THE WORLD IS YOURS", textColor: UIColor.red, backgroundColor: UIColor.green, heightOfView : 100, font : UIFont(name: "HelveticaNeue-Bold",size:30)!, applyShadow : true)
+UIFeedback.showFeedback(message: "Times Have Changed", textColor: UIColor.red, backgroundColor: UIColor.green, heightOfView : 100, font : UIFont(name: "HelveticaNeue-Bold",size:30)!, applyShadow : true)
 ```
 
 
