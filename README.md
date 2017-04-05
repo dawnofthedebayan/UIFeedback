@@ -5,9 +5,15 @@
 [![License](https://img.shields.io/cocoapods/l/UIFeedback.svg?style=flat)](http://cocoapods.org/pods/UIFeedback)
 [![Platform](https://img.shields.io/cocoapods/p/UIFeedback.svg?style=flat)](http://cocoapods.org/pods/UIFeedback)
 
+
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
+
+## Introduction 
+UIFeedback gives an elegant and easy way to enhance user experience through a feedback.
+Let your users know when a web request fails or when request succeeds.  
 
 ## Requirements
 iOS 8.0+
@@ -27,6 +33,26 @@ pod "UIFeedback"
 ```
 import UIFeedback 
 
+```
+Default height of feedback view = ```75```
+Apply Shadow to view = ```false```
+Default Font = ```HelveticaNeue-Light```
+Default Font Size = ```15```
+
+
+```
+UIFeedback.showFeedback(message: "THE WORLD IS YOURS", textColor: UIColor.white, backgroundColor: UIColor.red
+```
+
+```
+UIFeedback.showFeedback(message: "ACROSS THE UNIVERSE", textColor: UIColor.white, backgroundColor: UIColor.red, applyShadow: true)
+```
+```
+UIFeedback.showFeedback(message: "THE TIMES THEY ARE A CHANGIN'", textColor: UIColor.white, backgroundColor: UIColor.red, heightOfView: 64, applyShadow: true)
+```
+
+```
+UIFeedback.showFeedback(message: "THE WORLD IS YOURS", textColor: UIColor.red, backgroundColor: UIColor.green, heightOfView : 100, font : UIFont(name: "HelveticaNeue-Bold",size:30)!, applyShadow : true)
 ```
 
 
