@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import UIFeedback
 
 class ViewController: UIViewController {
-
+    
+     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,5 +23,11 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    
+    @IBAction func showFeedbackButtonPressed() {
+        
+        UIFeedback.showFeedback(message: "HELLO MY FRIEND", textColor: UIColor.red, backgroundColor: UIColor.green, heightOfView : 100, font : UIFont(name: "HelveticaNeue-Bold",size:30)!, applyShadow : true)
+        
+    }
 }
 

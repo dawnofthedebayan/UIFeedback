@@ -1,0 +1,16 @@
+PODS:
+  - UIFeedback (0.1.0)
+
+DEPENDENCIES:
+  - UIFeedback (from `../`)
+
+EXTERNAL SOURCES:
+  UIFeedback:
+    :path: ../
+
+SPEC CHECKSUMS:
+  UIFeedback: 465ec3fc67c1691614e764ffa6b5e59d629f2ef4
+
+PODFILE CHECKSUM: 9b837602459c46275d650babbd4094a27a4f70bc
+
+COCOAPODS: 1.2.0

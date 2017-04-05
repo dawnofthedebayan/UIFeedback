@@ -1,0 +1,6 @@
+framework module UIFeedback {
+  umbrella header "UIFeedback-umbrella.h"
+
+  export *
+  module * { export * }
+}

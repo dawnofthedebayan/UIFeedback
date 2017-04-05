@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'UIFeedback'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of UIFeedback.'
+  s.summary          = 'Easy to use Feedback UI from anywhere in your code base.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -17,9 +17,7 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
+  s.description      = 'UIFeedback provides an easy to use feedback from anywhere in your codebase. You can choose the font size of the UI, the font family. The FeedbackUI has two modes of operation - Normal & Error. For each of the modes you can configure the background color of the FeedbackUI separately. Tapping on the feedback UI dismisses it.'
 
   s.homepage         = 'https://github.com/dawnofthedebayan/UIFeedback'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
