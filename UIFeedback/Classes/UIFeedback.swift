@@ -102,7 +102,7 @@ extension UIFeedback {
         
     }
     
-    public class func showFeedback(message : String,textColor : UIColor, backgroundColor : UIColor , heightOfView : CGFloat = 75, applyShadow : Bool = false) {
+    public class func showFeedback(message : String,textColor : UIColor, backgroundColor : UIColor , heightOfView : CGFloat , applyShadow : Bool = false) {
         
         let view = UIView()
         
@@ -146,7 +146,7 @@ extension UIFeedback {
         
     }
     
-    public class func showFeedback(message : String,textColor: UIColor, backgroundColor : UIColor , heightOfView : CGFloat = 75, font: UIFont, applyShadow : Bool = false) {
+    public class func showFeedback(message : String,textColor: UIColor, backgroundColor : UIColor , heightOfView : CGFloat , font: UIFont, applyShadow : Bool = false) {
         
         let view = UIView()
         
@@ -191,7 +191,5 @@ extension UIFeedback {
         
         
     }
-    
-    
 
 }
