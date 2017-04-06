@@ -47,7 +47,7 @@ public class UIFeedback : UIView {
         
     }
     
-    //Remove
+    
     @objc fileprivate static func removeViewWithTap(gestureRecognizer : UIGestureRecognizer) {
         removeView(view: gestureRecognizer.view ?? UIView())
     }
@@ -57,37 +57,14 @@ public class UIFeedback : UIView {
         DispatchQueue.main.asyncAfter(
             deadline: DispatchTime.now() + Double(Int64(delay * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: closure)
     }
-}
-
-//API functions 
-extension UIFeedback {
     
-    public  class func showFeedback(message : String, textColor : UIColor, backgroundColor : UIColor, applyShadow : Bool = false) {
+    
+    fileprivate static func createView(backgroundColor : UIColor, applyShadow : Bool) -> UIView{
         
         let view = UIView()
         view.backgroundColor = backgroundColor
-        
-        let viewFrame = CGRect(x : 0 , y : -heightOfFeedbackView, width : UIScreen.main.bounds.width, height : heightOfFeedbackView)
+        let viewFrame = CGRect(x : 0 , y : -UIFeedback.heightOfFeedbackView, width : UIScreen.main.bounds.width, height : UIFeedback.heightOfFeedbackView)
         view.frame = viewFrame
-        
-        
-        let label = UILabel()
-        label.text = message
-        label.textColor = textColor
-        label.font = UIFont(name : "HelveticaNeue-Light",size : 15.0)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textAlignment = .center
-        label.numberOfLines = 0
-        
-        view.addSubview(label)
-        
-        let viewDictionary = ["view": view, "label": label]
-        let horizontalConstraint = NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[label]-0-|", options: NSLayoutFormatOptions(rawValue : 0), metrics: nil, views: viewDictionary)
-        let verticalConstraint = NSLayoutConstraint.constraints(withVisualFormat: "V:|-20-[label]-0-|", options: NSLayoutFormatOptions(rawValue : 0), metrics: nil, views: viewDictionary)
-        view.addConstraints(horizontalConstraint)
-        view.addConstraints(verticalConstraint)
-        
-        UIApplication.shared.keyWindow?.addSubview(view)
         
         if applyShadow {
             view.layer.shadowOffset = CGSize.zero
@@ -95,6 +72,49 @@ extension UIFeedback {
             view.layer.shadowRadius = 3
             view.layer.shadowOpacity = 0.8
         }
+        return view
+    }
+    
+    fileprivate static func createLabel(textColor: UIColor, message : String , font : UIFont = UIFont(name : "HelveticaNeue-Light",size : 15.0)!) -> UILabel {
+        
+        let label = UILabel()
+        label.text = message
+        label.textColor = textColor
+        label.font = font
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        return label
+    }
+    
+    fileprivate static func createConstraints(view : UIView , label : UILabel) {
+        
+        let viewDictionary = ["view": view, "label": label]
+        let horizontalConstraint = NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[label]-0-|", options: NSLayoutFormatOptions(rawValue : 0), metrics: nil, views: viewDictionary)
+        let verticalConstraint = NSLayoutConstraint.constraints(withVisualFormat: "V:|-20-[label]-0-|", options: NSLayoutFormatOptions(rawValue : 0), metrics: nil, views: viewDictionary)
+        view.addConstraints(horizontalConstraint)
+        view.addConstraints(verticalConstraint)
+        
+    }
+    
+}
+
+//API functions 
+extension UIFeedback {
+    
+    public  class func showFeedback(message : String, textColor : UIColor, backgroundColor : UIColor, applyShadow : Bool = false) {
+        
+        let view = createView(backgroundColor: backgroundColor, applyShadow : applyShadow) 
+        
+        let label = createLabel(textColor: textColor, message: message)
+        
+        view.addSubview(label)
+        
+        createConstraints(view: view, label: label)
+        
+        UIApplication.shared.keyWindow?.addSubview(view)
+        
+       
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(removeViewWithTap(gestureRecognizer:)))
         view.addGestureRecognizer(tap)
@@ -104,40 +124,18 @@ extension UIFeedback {
     
     public class func showFeedback(message : String,textColor : UIColor, backgroundColor : UIColor , heightOfView : CGFloat , applyShadow : Bool = false) {
         
-        let view = UIView()
-        
-        view.backgroundColor = backgroundColor
         
         heightOfFeedbackView = heightOfView
         
-        let viewFrame = CGRect(x : 0 , y : -heightOfView, width : UIScreen.main.bounds.width, height : heightOfView)
-        view.frame = viewFrame
+        let view = createView(backgroundColor: backgroundColor, applyShadow : applyShadow)
         
-        
-        let label = UILabel()
-        label.text = message
-        label.textColor = textColor
-        label.font = UIFont(name : "HelveticaNeue-Light",size : 15.0)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textAlignment = .center
-        label.numberOfLines = 0
+        let label = createLabel(textColor: textColor, message: message)
         
         view.addSubview(label)
         
-        let viewDictionary = ["view": view, "label": label]
-        let horizontalConstraint = NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[label]-0-|", options: NSLayoutFormatOptions(rawValue : 0), metrics: nil, views: viewDictionary)
-        let verticalConstraint = NSLayoutConstraint.constraints(withVisualFormat: "V:|-20-[label]-0-|", options: NSLayoutFormatOptions(rawValue : 0), metrics: nil, views: viewDictionary)
-        view.addConstraints(horizontalConstraint)
-        view.addConstraints(verticalConstraint)
+        createConstraints(view: view, label: label)
         
         UIApplication.shared.keyWindow?.addSubview(view)
-        
-        if applyShadow {
-            view.layer.shadowOffset = CGSize.zero
-            view.layer.shadowColor = UIColor.black.cgColor
-            view.layer.shadowRadius = 3
-            view.layer.shadowOpacity = 0.8
-        }
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(removeViewWithTap(gestureRecognizer:)))
         view.addGestureRecognizer(tap)
@@ -148,47 +146,19 @@ extension UIFeedback {
     
     public class func showFeedback(message : String,textColor: UIColor, backgroundColor : UIColor , heightOfView : CGFloat , font: UIFont, applyShadow : Bool = false) {
         
-        let view = UIView()
+        let view = createView(backgroundColor: backgroundColor, applyShadow : applyShadow)
         
-        view.backgroundColor = backgroundColor
-        
-        heightOfFeedbackView = heightOfView
-        
-        let viewFrame = CGRect(x : 0 , y : -heightOfView, width : UIScreen.main.bounds.width, height : heightOfView)
-        view.frame = viewFrame
-        
-        
-        let label = UILabel()
-        label.text = message
-        label.textColor = textColor
-        label.font = font
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textAlignment = .center
-        label.numberOfLines = 0
+        let label = createLabel(textColor: textColor, message: message, font : font)
         
         view.addSubview(label)
         
-        let viewDictionary = ["view": view, "label": label]
-        let horizontalConstraint = NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[label]-0-|", options: NSLayoutFormatOptions(rawValue : 0), metrics: nil, views: viewDictionary)
-        let verticalConstraint = NSLayoutConstraint.constraints(withVisualFormat: "V:|-20-[label]-0-|", options: NSLayoutFormatOptions(rawValue : 0), metrics: nil, views: viewDictionary)
-        view.addConstraints(horizontalConstraint)
-        view.addConstraints(verticalConstraint)
-        
+        createConstraints(view: view, label: label)
         UIApplication.shared.keyWindow?.addSubview(view)
-        
-        if applyShadow {
             
-            view.layer.shadowOffset = CGSize.zero
-            view.layer.shadowColor = UIColor.black.cgColor
-            view.layer.shadowRadius = 3
-            view.layer.shadowOpacity = 0.8
-            
-        }
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(removeViewWithTap(gestureRecognizer:)))
         view.addGestureRecognizer(tap)
         self.showView(view: view)
-        
         
     }
 

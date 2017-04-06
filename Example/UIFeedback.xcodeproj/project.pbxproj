@@ -28,8 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		01D9BDE3EA17B6D7644B5748 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		0C563F8A2E3F8207B3F760E8 /* UIFeedback.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = UIFeedback.podspec; path = ../UIFeedback.podspec; sourceTree = "<group>"; };
+		01D9BDE3EA17B6D7644B5748 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		0C563F8A2E3F8207B3F760E8 /* UIFeedback.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = UIFeedback.podspec; path = ../UIFeedback.podspec; sourceTree = "<group>"; };
 		361F7F278614F14CF80D34D8 /* Pods-UIFeedback_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIFeedback_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UIFeedback_Tests/Pods-UIFeedback_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		56E7BF8C49CB4AC183BCB744 /* Pods-UIFeedback_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIFeedback_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UIFeedback_Example/Pods-UIFeedback_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* UIFeedback_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIFeedback_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,7 +43,7 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		76717F7EBD7E74873E539824 /* Pods_UIFeedback_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UIFeedback_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7D3E9677DB7565787D11DC32 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		7D3E9677DB7565787D11DC32 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		8D7FE3818EB7CEDD0D8C1940 /* Pods-UIFeedback_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIFeedback_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UIFeedback_Tests/Pods-UIFeedback_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		9D1FD7D15CC742AB4F6D77E8 /* Pods-UIFeedback_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIFeedback_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-UIFeedback_Example/Pods-UIFeedback_Example.release.xcconfig"; sourceTree = "<group>"; };
 		C55652FDF24BB996B3D015B0 /* Pods_UIFeedback_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UIFeedback_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -215,10 +215,12 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = M2E4287CS6;
 						LastSwiftMigration = 0820;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = M2E4287CS6;
 						LastSwiftMigration = 0820;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -496,6 +498,7 @@
 			baseConfigurationReference = 56E7BF8C49CB4AC183BCB744 /* Pods-UIFeedback_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = M2E4287CS6;
 				INFOPLIST_FILE = UIFeedback/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -510,6 +513,7 @@
 			baseConfigurationReference = 9D1FD7D15CC742AB4F6D77E8 /* Pods-UIFeedback_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = M2E4287CS6;
 				INFOPLIST_FILE = UIFeedback/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -523,6 +527,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8D7FE3818EB7CEDD0D8C1940 /* Pods-UIFeedback_Tests.debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = M2E4287CS6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -543,6 +548,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 361F7F278614F14CF80D34D8 /* Pods-UIFeedback_Tests.release.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = M2E4287CS6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",

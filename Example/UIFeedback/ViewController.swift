@@ -26,7 +26,7 @@ class ViewController: UIViewController {
     
     @IBAction func showFeedbackButtonPressed() {
         
-        UIFeedback.showFeedback(message: "HELLO MY FRIEND", textColor: UIColor.red, backgroundColor: UIColor.green, heightOfView : 100, font : UIFont(name: "HelveticaNeue-Bold",size:30)!, applyShadow : true)
+        UIFeedback.showFeedback(message: "Tangled Up in Blue", textColor: UIColor.red, backgroundColor: UIColor.green, heightOfView : 100, font : UIFont(name: "HelveticaNeue-Bold",size:30)!, applyShadow : true)
 
     }
 }

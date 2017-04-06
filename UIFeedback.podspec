@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'UIFeedback'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'Easy to use Feedback UI from anywhere in your code base.'
 
 # This description is used to generate tags and improve search results.
