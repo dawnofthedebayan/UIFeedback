@@ -6,6 +6,8 @@
 [![Platform](https://img.shields.io/cocoapods/p/UIFeedback.svg?style=flat)](http://cocoapods.org/pods/UIFeedback)
 
 
+![Alt Text](https://github.com/dawnofthedebayan/UIFeedback/blob/master/ezgif.com-video-to-gif.gif)
+
 
 ## Example
 
@@ -34,14 +36,6 @@ pod "UIFeedback"
 import UIFeedback 
 
 ```
-
-Default height of feedback view = ```75```
-
-Apply Shadow to view = ```false```
-
-Default Font = ```HelveticaNeue-Light```
-
-Default Font Size = ```15```
 
 
 ```
